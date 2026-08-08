@@ -180,6 +180,64 @@
 
     </main>
 
+
+    <!-- ============================================================
+         FRIEND FEATURES: ADD FRIEND / PROFILE / CHAT MODALS
+         ============================================================ -->
+
+    <div class="friend-modal" id="addFriendModal" aria-hidden="true">
+        <div class="friend-modal-backdrop" data-close-modal="addFriendModal"></div>
+        <div class="friend-modal-box" role="dialog" aria-modal="true" aria-labelledby="addFriendTitle">
+            <div class="friend-modal-header">
+                <div>
+                    <span class="eyebrow">👥 ABTALKS · NETWORK</span>
+                    <h2 id="addFriendTitle">Find Friends</h2>
+                </div>
+                <button class="modal-close" data-close-modal="addFriendModal" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="modal-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="addFriendSearch" placeholder="Search people...">
+            </div>
+
+            <div id="peopleList" class="people-list"></div>
+        </div>
+    </div>
+
+    <div class="friend-modal" id="profileModal" aria-hidden="true">
+        <div class="friend-modal-backdrop" data-close-modal="profileModal"></div>
+        <div class="friend-modal-box profile-modal-box" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+            <button class="modal-close profile-close" data-close-modal="profileModal" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="profileContent"></div>
+        </div>
+    </div>
+
+    <div class="friend-modal" id="chatModal" aria-hidden="true">
+        <div class="friend-modal-backdrop" data-close-modal="chatModal"></div>
+        <div class="friend-modal-box chat-modal-box" role="dialog" aria-modal="true" aria-labelledby="chatTitle">
+            <div class="chat-header">
+                <div id="chatFriendInfo"></div>
+                <button class="modal-close" data-close-modal="chatModal" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="chat-messages" id="chatMessages"></div>
+
+            <form class="chat-input-row" id="chatForm">
+                <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
+                <button type="submit" class="btn btn-primary" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/sidebar.js"></script>
