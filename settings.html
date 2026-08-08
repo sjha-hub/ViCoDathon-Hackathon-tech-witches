@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Settings | ABTalks</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- =========================================
+             MOBILE / RESPONSIVE NAVIGATION
+        ========================================== -->
+
+        <nav class="app-nav">
+
+            <div class="nav-brand">
+                <span class="brand-mark">A</span>
+                <span class="brand-name">ABTalks</span>
+            </div>
+
+            <div class="nav-links">
+
+                <a href="student_dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="challenge_day.html">
+                    Challenge
+                </a>
+
+                <a
+                    href="settings.html"
+                    class="active"
+                >
+                    Settings
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+
+        <main class="settings-page">
+
+            <!-- Header -->
+
+            <header class="page-header">
+
+                <button
+                    class="back-button"
+                    type="button"
+                    onclick="goBack()"
+                    aria-label="Go back"
+                >
+                    ←
+                </button>
+
+                <div>
+
+                    <span class="eyebrow">
+                        ACCOUNT
+                    </span>
+
+                    <h1>
+                        Settings
+                    </h1>
+
+                    <p>
+                        Manage your ABTalks experience.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <!-- =====================================
+                 PROFILE
+            ====================================== -->
+
+            <section class="settings-section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        PROFILE
+                    </span>
+
+                    <h2>
+                        Your profile
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <div class="profile-settings">
+
+                        <div class="settings-avatar">
+                            A
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong
+                                data-student-name
+                            >
+                                Alex
+                            </strong>
+
+                            <span
+                                data-student-email
+                            >
+                                alex@example.com
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-divider"></div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-content">
+
+                            <strong>
+                                Full name
+                            </strong>
+
+                            <span>
+                                The name shown on your profile.
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="settings-action"
+                            type="button"
+                            data-edit-profile
+                        >
+                            Edit
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 CONNECTED PROFILES
+            ====================================== -->
+
+            <section class="settings-section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        CONNECTED PROFILES
+                    </span>
+
+                    <h2>
+                        Your coding profiles
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-card">
+
+
+                    <!-- GitHub -->
+
+                    <div class="connection-row">
+
+                        <div class="connection-icon github-icon">
+                            GH
+                        </div>
+
+                        <div class="connection-info">
+
+                            <strong>
+                                GitHub
+                            </strong>
+
+                            <span
+                                data-github-status
+                            >
+                                Not connected
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="settings-action"
+                            type="button"
+                            data-github-action
+                        >
+                            Connect
+                        </button>
+
+                    </div>
+
+
+                    <div class="settings-divider"></div>
+
+
+                    <!-- LinkedIn -->
+
+                    <div class="connection-row">
+
+                        <div class="connection-icon linkedin-icon">
+                            in
+                        </div>
+
+                        <div class="connection-info">
+
+                            <strong>
+                                LinkedIn
+                            </strong>
+
+                            <span
+                                data-linkedin-status
+                            >
+                                Not connected
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="settings-action"
+                            type="button"
+                            data-linkedin-action
+                        >
+                            Connect
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 CHALLENGE PREFERENCES
+            ====================================== -->
+
+            <section class="settings-section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        CHALLENGE
+                    </span>
+
+                    <h2>
+                        Challenge preferences
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-card">
+
+
+                    <!-- Reminder -->
+
+                    <div class="setting-row">
+
+                        <div class="setting-content">
+
+                            <strong>
+                                Daily reminder
+                            </strong>
+
+                            <span>
+                                Get reminded about today's
+                                challenge.
+                            </span>
+
+                        </div>
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                id="reminderToggle"
+                                checked
+                            >
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-divider"></div>
+
+
+                    <!-- Streak notifications -->
+
+                    <div class="setting-row">
+
+                        <div class="setting-content">
+
+                            <strong>
+                                Streak notifications
+                            </strong>
+
+                            <span>
+                                Get notified when your streak
+                                is at risk.
+                            </span>
+
+                        </div>
+
+                        <label class="toggle">
+
+                            <input
+                                type="checkbox"
+                                id="streakToggle"
+                                checked
+                            >
+
+                            <span class="toggle-slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 APPEARANCE
+            ====================================== -->
+
+            <section class="settings-section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        APPEARANCE
+                    </span>
+
+                    <h2>
+                        Interface
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <div class="setting-row">
+
+                        <div class="setting-content">
+
+                            <strong>
+                                Theme
+                            </strong>
+
+                            <span>
+                                ABTalks uses the dark theme
+                                for a focused experience.
+                            </span>
+
+                        </div>
+
+                        <span class="theme-badge">
+                            Dark
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 DANGER / ACCOUNT
+            ====================================== -->
+
+            <section class="settings-section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        ACCOUNT
+                    </span>
+
+                    <h2>
+                        Account actions
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <button
+                        class="danger-setting"
+                        type="button"
+                        data-logout
+                    >
+
+                        <span>
+                            Log out
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Footer -->
+
+            <footer class="settings-footer">
+
+                <span>
+                    ABTalks
+                </span>
+
+                <span>
+                    60-day coding challenge
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================
+         SCRIPTS
+    ========================================== -->
+
+    <script src="js/data.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>
