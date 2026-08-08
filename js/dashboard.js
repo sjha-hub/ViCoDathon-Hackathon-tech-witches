@@ -156,3 +156,101 @@ function renderDashboard() {
         );
     });
 }
+
+// ============================================================
+// TIMER FUNCTIONALITY
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const timerDisplay = document.getElementById('taskTimer');
+    const startBtn = document.getElementById('startTimerBtn');
+    
+    let timeRemaining = 60 * 60; // 60 minutes in seconds
+    let timerInterval = null;
+    let isTimerRunning = false;
+
+    // Format time as MM:SS
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    // Update timer display
+    function updateDisplay() {
+        timerDisplay.textContent = formatTime(timeRemaining);
+        
+        // Change color based on time remaining
+        timerDisplay.classList.remove('warning', 'danger');
+        if (timeRemaining <= 300) { // 5 minutes
+            timerDisplay.classList.add('danger');
+        } else if (timeRemaining <= 600) { // 10 minutes
+            timerDisplay.classList.add('warning');
+        }
+    }
+
+    // Timer tick
+    function tick() {
+        if (timeRemaining > 0) {
+            timeRemaining--;
+            updateDisplay();
+        } else {
+            // Timer finished
+            clearInterval(timerInterval);
+            timerInterval = null;
+            isTimerRunning = false;
+            startBtn.textContent = 'Time\'s Up! ⏰';
+            startBtn.classList.remove('timer-active');
+            startBtn.disabled = true;
+            
+            // Optional: Add sound or notification
+            if (Notification.permission === 'granted') {
+                new Notification('ABTalks Timer', {
+                    body: 'Time\'s up! How did you do?',
+                    icon: '🧑‍💻'
+                });
+            }
+        }
+    }
+
+    // Start/Pause timer
+    startBtn.addEventListener('click', function() {
+        if (timerInterval) {
+            // Pause timer
+            clearInterval(timerInterval);
+            timerInterval = null;
+            isTimerRunning = false;
+            startBtn.textContent = 'Resume Timer';
+            startBtn.classList.remove('timer-active');
+            return;
+        }
+
+        // Start timer
+        if (timeRemaining <= 0) {
+            // Reset if timer finished
+            timeRemaining = 60 * 60;
+            updateDisplay();
+            startBtn.disabled = false;
+        }
+
+        timerInterval = setInterval(tick, 1000);
+        isTimerRunning = true;
+        startBtn.textContent = 'Pause Timer ⏸️';
+        startBtn.classList.add('timer-active');
+        
+        // Request notification permission
+        if (Notification.permission === 'default') {
+            Notification.requestPermission();
+        }
+    });
+
+    // Reset timer on page unload (optional)
+    window.addEventListener('beforeunload', function() {
+        if (timerInterval) {
+            clearInterval(timerInterval);
+        }
+    });
+
+    // Initialize display
+    updateDisplay();
+});

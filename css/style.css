@@ -2055,3 +2055,109 @@ button:disabled,
 
     transform: none;
 }
+
+/* ============================================================
+   TIMER STYLES
+   ============================================================ */
+
+.timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 0;
+    margin: 16px 0 20px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.timer-icon {
+    font-size: 1.3rem;
+}
+
+.timer-time {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+    min-width: 80px;
+}
+
+.timer-time.warning {
+    color: var(--warning);
+}
+
+.timer-time.danger {
+    color: var(--danger);
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.timer-label {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.timer-start-btn {
+    min-width: 100px;
+    flex-shrink: 0;
+}
+
+.timer-start-btn.timer-active {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: white;
+}
+
+.timer-start-btn.timer-active:hover {
+    background: #dc2626;
+    border-color: #dc2626;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .timer-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+    
+    .timer-display {
+        justify-content: center;
+    }
+    
+    .timer-time {
+        font-size: 2rem;
+        min-width: 70px;
+    }
+    
+    .timer-start-btn {
+        width: 100%;
+        min-height: 48px;
+    }
+}
+
+@media (min-width: 768px) {
+    .timer-container {
+        padding: 20px 0;
+    }
+    
+    .timer-time {
+        font-size: 2.2rem;
+    }
+}
+
+
