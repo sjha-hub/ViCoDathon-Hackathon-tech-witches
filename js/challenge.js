@@ -256,3 +256,4 @@ function showCompletionState() {
         );
     }
 }
+
