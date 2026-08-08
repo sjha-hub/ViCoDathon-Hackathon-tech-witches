@@ -111,6 +111,295 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
+
+    // ============================================================
+    // PEOPLE YOU CAN ADD
+    // ============================================================
+
+    const peopleData = [
+        {
+            id: 101,
+            name: "Riya Sharma",
+            emoji: "👩‍💻",
+            role: "CSE Student",
+            bio: "Learning C++ and building creative web projects.",
+            mutual: 4
+        },
+        {
+            id: 102,
+            name: "Arjun Mehta",
+            emoji: "🧑‍💻",
+            role: "Software Developer",
+            bio: "Interested in DSA, JavaScript and open-source projects.",
+            mutual: 6
+        },
+        {
+            id: 103,
+            name: "Neha Verma",
+            emoji: "👩‍🎨",
+            role: "UI/UX Enthusiast",
+            bio: "Exploring design systems and frontend development.",
+            mutual: 3
+        },
+        {
+            id: 104,
+            name: "Kabir Singh",
+            emoji: "🧑‍🎓",
+            role: "Engineering Student",
+            bio: "Practicing problem solving and competitive programming.",
+            mutual: 2
+        },
+        {
+            id: 105,
+            name: "Ananya Joshi",
+            emoji: "👩‍🔬",
+            role: "Data Science Student",
+            bio: "Interested in Python, AI and data visualization.",
+            mutual: 5
+        }
+    ];
+
+    const chatMessages = {};
+    let activeChatFriend = null;
+
+
+    // ============================================================
+    // ADD FRIEND / PROFILE / CHAT FUNCTIONS
+    // ============================================================
+
+    function openModal(id) {
+        const modal = document.getElementById(id);
+        if (!modal) return;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+        const modal = document.getElementById(id);
+        if (!modal) return;
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+
+        if (!document.querySelector('.friend-modal.open')) {
+            document.body.style.overflow = '';
+        }
+    }
+
+    function renderPeople(query = '') {
+        const container = document.getElementById('peopleList');
+        const search = query.toLowerCase().trim();
+
+        const availablePeople = peopleData.filter(person => {
+            const alreadyFriend = friendsData.some(friend => friend.name === person.name);
+            return !alreadyFriend && (
+                person.name.toLowerCase().includes(search) ||
+                person.role.toLowerCase().includes(search) ||
+                person.bio.toLowerCase().includes(search)
+            );
+        });
+
+        if (availablePeople.length === 0) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-icon">🔍</div>
+                    <h3>No people found</h3>
+                    <p>Try another name or keyword.</p>
+                </div>
+            `;
+            return;
+        }
+
+        container.innerHTML = availablePeople.map(person => `
+            <div class="person-item">
+                <div class="person-info">
+                    <div class="friend-avatar small">
+                        <span class="avatar-emoji">${person.emoji}</span>
+                    </div>
+                    <div>
+                        <strong>${person.name}</strong>
+                        <p>${person.role} · ${person.mutual} mutual friends</p>
+                    </div>
+                </div>
+                <div class="person-action">
+                    <button class="btn btn-primary btn-sm add-person-btn" data-id="${person.id}">
+                        <i class="fas fa-user-plus"></i> Add
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function addFriendFromPeople(personId, button) {
+        const person = peopleData.find(p => p.id === personId);
+        if (!person) return;
+
+        if (friendsData.some(friend => friend.name === person.name)) {
+            button.textContent = 'Added';
+            return;
+        }
+
+        friendsData.push({
+            id: Date.now(),
+            name: person.name,
+            emoji: person.emoji,
+            status: 'online',
+            badge: '🆕 New Friend',
+            bio: person.bio,
+            task: 'Getting started',
+            progress: 0,
+            lastActive: 'Just now',
+            day: 'Day 0/60'
+        });
+
+        button.classList.add('sent');
+        button.innerHTML = '<i class="fas fa-check"></i> Added';
+
+        filterAndSearch();
+        renderPeople(document.getElementById('addFriendSearch').value);
+        showToast(`✅ ${person.name} added to your friends!`);
+    }
+
+    function openProfile(friend) {
+        const content = document.getElementById('profileContent');
+
+        content.innerHTML = `
+            <div class="profile-content">
+                <div class="friend-avatar large profile-avatar">
+                    <span class="avatar-emoji">${friend.emoji}</span>
+                    <span class="status-dot ${friend.status}"></span>
+                </div>
+                <h2 id="profileTitle">${friend.name}</h2>
+                <p class="profile-role">${friend.bio}</p>
+                <p class="profile-bio">
+                    ${friend.name} is currently working on <strong>${friend.task}</strong>.
+                    Keep learning, stay active and build together on ABTalks.
+                </p>
+
+                <div class="profile-stats">
+                    <div class="profile-stat">
+                        <strong>${friend.progress}%</strong>
+                        <span>Progress</span>
+                    </div>
+                    <div class="profile-stat">
+                        <strong>${friend.day}</strong>
+                        <span>Journey</span>
+                    </div>
+                    <div class="profile-stat">
+                        <strong>${friend.lastActive}</strong>
+                        <span>Status</span>
+                    </div>
+                </div>
+
+                <div class="profile-current">
+                    <span class="activity-label">Currently working on</span>
+                    <strong>${friend.task}</strong>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="btn btn-primary profile-message-btn" data-id="${friend.id}">
+                        <i class="fas fa-comment"></i> Message
+                    </button>
+                </div>
+            </div>
+        `;
+
+        openModal('profileModal');
+    }
+
+    function getChatTime() {
+        return new Date().toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    }
+
+    function renderChat(friend) {
+        const container = document.getElementById('chatMessages');
+        const messages = chatMessages[friend.id] || [];
+
+        document.getElementById('chatFriendInfo').innerHTML = `
+            <div class="chat-person">
+                <div class="friend-avatar small">
+                    <span class="avatar-emoji">${friend.emoji}</span>
+                    <span class="status-dot ${friend.status}"></span>
+                </div>
+                <div>
+                    <strong id="chatTitle">${friend.name}</strong>
+                    <span>${friend.status === 'online' ? '● Online' : friend.lastActive}</span>
+                </div>
+            </div>
+        `;
+
+        if (messages.length === 0) {
+            container.innerHTML = `
+                <div class="chat-empty">
+                    <div style="font-size: 2rem; margin-bottom: 8px;">💬</div>
+                    Start a conversation with ${friend.name}
+                </div>
+            `;
+            return;
+        }
+
+        container.innerHTML = messages.map(message => `
+            <div class="chat-message ${message.sender}">
+                ${message.text}
+                <span class="chat-time">${message.time}</span>
+            </div>
+        `).join('');
+
+        container.scrollTop = container.scrollHeight;
+    }
+
+    function openChat(friend) {
+        activeChatFriend = friend;
+
+        if (!chatMessages[friend.id]) {
+            chatMessages[friend.id] = [];
+        }
+
+        renderChat(friend);
+        openModal('chatModal');
+
+        setTimeout(() => document.getElementById('chatInput').focus(), 100);
+    }
+
+    function showToast(message) {
+        let toast = document.getElementById('friendToast');
+
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'friendToast';
+            toast.style.cssText = `
+                position: fixed;
+                left: 50%;
+                bottom: 28px;
+                transform: translateX(-50%) translateY(20px);
+                z-index: 3000;
+                padding: 11px 16px;
+                background: var(--bg-card);
+                color: var(--text-primary);
+                border: 1px solid var(--border);
+                border-radius: var(--radius-sm);
+                box-shadow: 0 12px 35px rgba(0,0,0,.35);
+                font-size: .8rem;
+                opacity: 0;
+                transition: all .25s ease;
+            `;
+            document.body.appendChild(toast);
+        }
+
+        toast.textContent = message;
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(-50%) translateY(0)';
+
+        clearTimeout(toast._timer);
+        toast._timer = setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(-50%) translateY(20px)';
+        }, 2200);
+    }
+
     // ============================================================
     // RENDER FUNCTIONS
     // ============================================================
@@ -276,15 +565,100 @@ document.addEventListener('DOMContentLoaded', function() {
         const friend = friendsData.find(f => f.id === id);
 
         if (action === 'message') {
-            alert(`💬 Send a message to ${friend.name}!\n\nThis feature is coming soon!`);
+            openChat(friend);
         } else if (action === 'profile') {
-            alert(`👤 View ${friend.name}'s profile!\n\nThis feature is coming soon!`);
+            openProfile(friend);
         }
     });
 
     // Add Friend button
     document.getElementById('addFriendBtn').addEventListener('click', function() {
-        alert('👥 Find and add friends!\n\nThis feature is coming soon!');
+        renderPeople();
+        document.getElementById('addFriendSearch').value = '';
+        openModal('addFriendModal');
+        setTimeout(() => document.getElementById('addFriendSearch').focus(), 100);
+    });
+
+    // Search people while adding friends
+    document.getElementById('addFriendSearch').addEventListener('input', function() {
+        renderPeople(this.value);
+    });
+
+    // Add people from the Find Friends modal
+    document.getElementById('peopleList').addEventListener('click', function(e) {
+        const btn = e.target.closest('.add-person-btn');
+        if (!btn) return;
+
+        const personId = parseInt(btn.dataset.id);
+        addFriendFromPeople(personId, btn);
+    });
+
+    // Close modals from close buttons and backdrops
+    document.querySelectorAll('[data-close-modal]').forEach(element => {
+        element.addEventListener('click', function() {
+            closeModal(this.dataset.closeModal);
+        });
+    });
+
+    // Escape key closes any open modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.friend-modal.open').forEach(modal => {
+                closeModal(modal.id);
+            });
+        }
+    });
+
+    // Profile -> Message
+    document.getElementById('profileContent').addEventListener('click', function(e) {
+        const btn = e.target.closest('.profile-message-btn');
+        if (!btn) return;
+
+        const id = parseInt(btn.dataset.id);
+        const friend = friendsData.find(f => f.id === id);
+
+        if (friend) {
+            closeModal('profileModal');
+            openChat(friend);
+        }
+    });
+
+    // Chat message sending
+    document.getElementById('chatForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const input = document.getElementById('chatInput');
+        const message = input.value.trim();
+
+        if (!message || !activeChatFriend) return;
+
+        if (!chatMessages[activeChatFriend.id]) {
+            chatMessages[activeChatFriend.id] = [];
+        }
+
+        chatMessages[activeChatFriend.id].push({
+            sender: 'me',
+            text: message.replace(/</g, '&lt;').replace(/>/g, '&gt;'),
+            time: getChatTime()
+        });
+
+        input.value = '';
+        renderChat(activeChatFriend);
+
+        // Local demo response so the chat feels interactive.
+        setTimeout(() => {
+            if (!activeChatFriend) return;
+
+            chatMessages[activeChatFriend.id].push({
+                sender: 'friend',
+                text: `Hey! Thanks for your message 😊`,
+                time: getChatTime()
+            });
+
+            if (document.getElementById('chatModal').classList.contains('open')) {
+                renderChat(activeChatFriend);
+            }
+        }, 700);
     });
 
     // Friend requests (delegated)
@@ -302,7 +676,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Add to friends
                 friendsData.push({
-                    id: friendsData.length + 1,
+                    id: Date.now(),
                     name: request.name,
                     emoji: request.emoji,
                     status: 'online',
