@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LinkedIn Setup | ABTalks</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<main class="app-page">
+
+    <!-- Navigation -->
+    <aside class="navigation-rail">
+
+        <a href="student_dashboard.html" class="nav-item">
+            <span class="nav-icon">⌂</span>
+        </a>
+
+        <a href="modules.html" class="nav-item">
+            <span class="nav-icon">▦</span>
+        </a>
+
+        <a href="coding_profiles.html" class="nav-item">
+            <span class="nav-icon">&lt;/&gt;</span>
+        </a>
+
+        <a href="linkedin.html" class="nav-item active">
+            <span class="nav-icon">in</span>
+        </a>
+
+        <a href="github.html" class="nav-item">
+            <span class="nav-icon">GH</span>
+        </a>
+
+        <div class="nav-spacer"></div>
+
+        <button class="nav-item">
+            <span class="nav-icon">⚙</span>
+        </button>
+
+    </aside>
+
+
+    <section class="app-content">
+
+        <!-- Header -->
+        <header class="app-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    PROFILE SETUP · 02
+                </span>
+
+                <h1>
+                    LinkedIn
+                </h1>
+
+                <p>
+                    Connect your professional presence
+                    and showcase your progress.
+                </p>
+
+            </div>
+
+            <div class="header-profile">
+                <div class="profile-avatar">S</div>
+            </div>
+
+        </header>
+
+
+        <!-- Progress -->
+        <section class="setup-progress">
+
+            <div class="progress-header">
+                <span>Profile Setup</span>
+                <span>2 / 3</span>
+            </div>
+
+            <div class="progress-track">
+
+                <span
+                    class="progress-fill"
+                    style="width: 66%;"
+                ></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- LinkedIn Connection -->
+        <section class="connection-section">
+
+            <div class="connection-card">
+
+                <div class="connection-icon linkedin-icon">
+                    in
+                </div>
+
+                <span class="connection-badge">
+                    PROFESSIONAL PROFILE
+                </span>
+
+                <h2>
+                    Connect your LinkedIn
+                </h2>
+
+                <p>
+                    Enter your LinkedIn profile URL.
+                    We'll use mock profile data to show
+                    your professional presence.
+                </p>
+
+
+                <form
+                    id="linkedinForm"
+                    class="setup-form"
+                >
+
+                    <div class="form-group">
+
+                        <label for="linkedinUrl">
+                            LinkedIn Profile URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="linkedinUrl"
+                            name="linkedinUrl"
+                            placeholder="https://www.linkedin.com/in/your-profile"
+                            required
+                        >
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-full"
+                    >
+                        Fetch Profile
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- Profile Result -->
+        <section
+            id="linkedinResult"
+            class="profile-result-section hidden"
+        >
+
+            <div class="section-heading left">
+
+                <span class="eyebrow">
+                    PROFILE FOUND
+                </span>
+
+                <h2>
+                    Your LinkedIn presence
+                </h2>
+
+            </div>
+
+
+            <div class="linkedin-profile-card">
+
+                <div class="profile-summary">
+
+                    <div class="large-avatar">
+                        S
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Student Developer
+                        </h3>
+
+                        <p>
+                            Software Developer
+                        </p>
+
+                        <span class="verified-status">
+                            ✓ Connected
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Statistics -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <span class="stat-value">
+                            48
+                        </span>
+
+                        <span class="stat-label">
+                            Posts
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-value">
+                            6
+                        </span>
+
+                        <span class="stat-label">
+                            Certifications
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-value">
+                            14
+                        </span>
+
+                        <span class="stat-label">
+                            Skills
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span class="stat-value">
+                            1.2K
+                        </span>
+
+                        <span class="stat-label">
+                            Followers
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-sync">
+
+                    <span>
+                        Profile completeness
+                    </span>
+
+                    <strong>
+                        82%
+                    </strong>
+
+                </div>
+
+                <div class="mini-progress">
+
+                    <span style="width: 82%;"></span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Navigation -->
+        <div class="setup-navigation">
+
+            <a
+                href="coding_profiles.html"
+                class="btn btn-secondary"
+            >
+                ← Back
+            </a>
+
+            <a
+                href="github.html"
+                class="btn btn-primary"
+            >
+                Continue
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/linkedin.js"></script>
+
+</body>
+</html>

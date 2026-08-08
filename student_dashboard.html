@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard | ABTalks</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<main class="app-page dashboard-page">
+
+    <!-- Navigation -->
+    <aside class="navigation-rail">
+
+        <a
+            href="student_dashboard.html"
+            class="nav-item active"
+            aria-label="Dashboard"
+        >
+            <span class="nav-icon">⌂</span>
+        </a>
+
+        <a
+            href="modules.html"
+            class="nav-item"
+            aria-label="Modules"
+        >
+            <span class="nav-icon">▦</span>
+        </a>
+
+        <a
+            href="coding_profiles.html"
+            class="nav-item"
+            aria-label="Coding Profiles"
+        >
+            <span class="nav-icon">&lt;/&gt;</span>
+        </a>
+
+        <a
+            href="linkedin.html"
+            class="nav-item"
+            aria-label="LinkedIn"
+        >
+            <span class="nav-icon">in</span>
+        </a>
+
+        <a
+            href="github.html"
+            class="nav-item"
+            aria-label="GitHub"
+        >
+            <span class="nav-icon">GH</span>
+        </a>
+
+        <div class="nav-spacer"></div>
+
+        <button
+            class="nav-item"
+            aria-label="Settings"
+        >
+            <span class="nav-icon">⚙</span>
+        </button>
+
+    </aside>
+
+
+    <!-- Main -->
+    <section class="app-content">
+
+        <!-- Header -->
+        <header class="dashboard-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    ABTALKS · STUDENT DASHBOARD
+                </span>
+
+                <h1>
+                    Good evening,
+                    <span class="gradient-text">
+                        Student.
+                    </span>
+                </h1>
+
+                <p>
+                    Keep your streak alive and make
+                    today's progress count.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-header-actions">
+
+                <a
+                    href="challenge_day.html"
+                    class="btn btn-primary"
+                >
+                    Challenge
+                    <span>→</span>
+                </a>
+
+                <div class="profile-avatar">
+                    S
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Streak Hero -->
+        <section class="streak-hero">
+
+            <div class="streak-info">
+
+                <span class="eyebrow">
+                    CURRENT STREAK
+                </span>
+
+                <div class="streak-number">
+                    12
+                </div>
+
+                <span class="streak-label">
+                    Days
+                </span>
+
+                <p>
+                    You're building momentum. Keep going.
+                </p>
+
+            </div>
+
+
+            <div class="streak-visual">
+
+                <div class="streak-ring">
+
+                    <span>
+                        🔥
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Challenge Progress -->
+        <section class="dashboard-card challenge-progress-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        60-DAY CHALLENGE
+                    </span>
+
+                    <h2>
+                        Day 12 of 60
+                    </h2>
+
+                </div>
+
+                <strong>
+                    20%
+                </strong>
+
+            </div>
+
+
+            <div class="large-progress">
+
+                <span
+                    style="width: 20%;"
+                ></span>
+
+            </div>
+
+
+            <div class="progress-meta">
+
+                <span>
+                    12 completed
+                </span>
+
+                <span>
+                    48 remaining
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Today's Task -->
+        <section class="dashboard-card today-task-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        TODAY'S TASK
+                    </span>
+
+                    <h2>
+                        Build a Developer Profile Card
+                    </h2>
+
+                </div>
+
+                <span class="status-badge">
+                    DAY 12
+                </span>
+
+            </div>
+
+
+            <p class="task-description">
+                Create a responsive developer profile card
+                that highlights your skills, projects,
+                and social links.
+            </p>
+
+
+            <div class="task-meta">
+
+                <span>
+                    ⏱ 60–90 min
+                </span>
+
+                <span>
+                    HTML · CSS · JS
+                </span>
+
+            </div>
+
+
+            <a
+                href="challenge_day.html"
+                class="btn btn-primary btn-full"
+            >
+                View Today's Challenge
+                <span>→</span>
+            </a>
+
+        </section>
+
+
+        <!-- Quick Check -->
+        <section class="dashboard-card quick-check-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        TONIGHT'S QUICK CHECK
+                    </span>
+
+                    <h2>
+                        Finish today's proof
+                    </h2>
+
+                </div>
+
+                <span class="completion-count">
+                    0 / 3
+                </span>
+
+            </div>
+
+
+            <div class="check-list">
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        disabled
+                    >
+
+                    <span>
+                        Build today's task
+                    </span>
+
+                </label>
+
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        disabled
+                    >
+
+                    <span>
+                        GitHub proof
+                    </span>
+
+                </label>
+
+
+                <label class="check-item">
+
+                    <input
+                        type="checkbox"
+                        disabled
+                    >
+
+                    <span>
+                        LinkedIn proof
+                    </span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- Stats -->
+        <section class="dashboard-stats">
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    COMPLETION
+                </span>
+
+                <strong class="stat-value">
+                    20%
+                </strong>
+
+                <span class="stat-change">
+                    +4% this week
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    STANDING
+                </span>
+
+                <strong class="stat-value">
+                    #184
+                </strong>
+
+                <span class="stat-change">
+                    Top 18%
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    ACHIEVEMENTS
+                </span>
+
+                <strong class="stat-value">
+                    3
+                </strong>
+
+                <span class="stat-change">
+                    Keep earning
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Achievements -->
+        <section class="dashboard-card achievements-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        ACHIEVEMENTS
+                    </span>
+
+                    <h2>
+                        Your milestones
+                    </h2>
+
+                </div>
+
+                <a href="#">
+                    View all
+                </a>
+
+            </div>
+
+
+            <div class="achievement-list">
+
+                <div class="achievement-item">
+
+                    <div class="achievement-icon">
+                        🔥
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            7-Day Streak
+                        </strong>
+
+                        <p>
+                            Maintained a week-long streak.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="achievement-item">
+
+                    <div class="achievement-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            First Submission
+                        </strong>
+
+                        <p>
+                            Completed your first challenge day.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="achievement-item">
+
+                    <div class="achievement-icon">
+                        ⚡
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Consistency Starter
+                        </strong>
+
+                        <p>
+                            You're building momentum.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

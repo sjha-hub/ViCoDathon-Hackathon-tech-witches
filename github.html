@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GitHub Setup | ABTalks</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<main class="app-page">
+
+    <!-- Navigation -->
+    <aside class="navigation-rail">
+
+        <a href="student_dashboard.html" class="nav-item">
+            <span class="nav-icon">⌂</span>
+        </a>
+
+        <a href="modules.html" class="nav-item">
+            <span class="nav-icon">▦</span>
+        </a>
+
+        <a href="coding_profiles.html" class="nav-item">
+            <span class="nav-icon">&lt;/&gt;</span>
+        </a>
+
+        <a href="linkedin.html" class="nav-item">
+            <span class="nav-icon">in</span>
+        </a>
+
+        <a href="github.html" class="nav-item active">
+            <span class="nav-icon">GH</span>
+        </a>
+
+        <div class="nav-spacer"></div>
+
+        <button class="nav-item">
+            <span class="nav-icon">⚙</span>
+        </button>
+
+    </aside>
+
+
+    <section class="app-content">
+
+        <!-- Header -->
+        <header class="app-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    PROFILE SETUP · 03
+                </span>
+
+                <h1>
+                    GitHub
+                </h1>
+
+                <p>
+                    Connect your GitHub activity
+                    and showcase your proof of work.
+                </p>
+
+            </div>
+
+            <div class="header-profile">
+                <div class="profile-avatar">S</div>
+            </div>
+
+        </header>
+
+
+        <!-- Progress -->
+        <section class="setup-progress">
+
+            <div class="progress-header">
+                <span>Profile Setup</span>
+                <span>3 / 3</span>
+            </div>
+
+            <div class="progress-track">
+
+                <span
+                    class="progress-fill"
+                    style="width: 100%;"
+                ></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- GitHub Connection -->
+        <section class="connection-section">
+
+            <div class="connection-card">
+
+                <div class="connection-icon github-icon">
+                    GH
+                </div>
+
+                <span class="connection-badge">
+                    DEVELOPER ACTIVITY
+                </span>
+
+                <h2>
+                    Connect your GitHub
+                </h2>
+
+                <p>
+                    Connect your GitHub profile to
+                    showcase repositories, commits,
+                    and contribution activity.
+                </p>
+
+
+                <form
+                    id="githubForm"
+                    class="setup-form"
+                >
+
+                    <div class="form-group">
+
+                        <label for="githubUsername">
+                            GitHub Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="githubUsername"
+                            name="githubUsername"
+                            placeholder="e.g. skane123"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="githubUrl">
+                            GitHub Profile URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="githubUrl"
+                            name="githubUrl"
+                            placeholder="https://github.com/username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-full"
+                    >
+                        Analyze GitHub
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- GitHub Result -->
+        <section
+            id="githubResult"
+            class="github-result-section"
+        >
+
+            <div class="section-heading left">
+
+                <span class="eyebrow">
+                    ACTIVITY OVERVIEW
+                </span>
+
+                <h2>
+                    Your GitHub activity
+                </h2>
+
+            </div>
+
+
+            <!-- Statistics -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <span class="stat-value">
+                        24
+                    </span>
+
+                    <span class="stat-label">
+                        Repositories
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-value">
+                        186
+                    </span>
+
+                    <span class="stat-label">
+                        Commits
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-value">
+                        42
+                    </span>
+
+                    <span class="stat-label">
+                        Contributions
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-value">
+                        7
+                    </span>
+
+                    <span class="stat-label">
+                        Active Repos
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Recent Activity -->
+            <div class="activity-card">
+
+                <div class="activity-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            RECENT ACTIVITY
+                        </span>
+
+                        <h3>
+                            Latest contributions
+                        </h3>
+
+                    </div>
+
+                    <span class="activity-status">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="activity-list">
+
+                    <div class="activity-item">
+
+                        <span class="activity-dot"></span>
+
+                        <div>
+
+                            <strong>
+                                portfolio-project
+                            </strong>
+
+                            <p>
+                                4 commits · Today
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <span class="activity-dot"></span>
+
+                        <div>
+
+                            <strong>
+                                weather-app
+                            </strong>
+
+                            <p>
+                                2 commits · Yesterday
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <span class="activity-dot"></span>
+
+                        <div>
+
+                            <strong>
+                                coding-challenges
+                            </strong>
+
+                            <p>
+                                7 commits · 3 days ago
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Navigation -->
+        <div class="setup-navigation">
+
+            <a
+                href="linkedin.html"
+                class="btn btn-secondary"
+            >
+                ← Back
+            </a>
+
+            <a
+                href="student_dashboard.html"
+                class="btn btn-primary"
+            >
+                Go to Dashboard
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/github.js"></script>
+
+</body>
+</html>
