@@ -4,26 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Welcome to ABTalks</title>
+    <title>ABTalks - 60 Day Coding Challenge</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-        <link rel="stylesheet" href="css/sidebar.css"> 
-
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/landing.css">
 
 </head>
 
 <body>
-     <!-- ============================================================
-         SIDEBAR (Desktop & Tablet) - ALWAYS VISIBLE ON DESKTOP
-         ============================================================ -->
+    <!-- SIDEBAR -->
     <aside class="sidebar-nav" id="sidebarNav">
         <div class="sidebar-brand">
             <span class="brand-icon">AB</span>
             <span class="brand-name">Talks</span>
         </div>
         <nav class="sidebar-menu">
-            <a href="student_dashboard.html" class="sidebar-link active" data-page="dashboard">
+            <a href="student_dashboard.html" class="sidebar-link" data-page="dashboard">
                 <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="3" y="3" width="7" height="7" rx="1"/>
                     <rect x="14" y="3" width="7" height="7" rx="1"/>
@@ -77,9 +75,7 @@
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
 
-    <!-- ============================================================
-         MOBILE BOTTOM NAVIGATION (Shows on mobile only)
-         ============================================================ -->
+    <!-- MOBILE BOTTOM NAV -->
     <nav class="mobile-bottom-nav" id="mobileBottomNav">
         <a href="student_dashboard.html" class="mobile-nav-item active" data-page="dashboard">
             <span class="nav-icon">⌂</span>
@@ -107,232 +103,346 @@
 
     <main class="landing-page">
 
-        <!-- Navigation -->
-        <header class="landing-header">
+        <!-- Floating Particles Background -->
+        <div class="particles-container" id="particlesContainer"></div>
 
+        <!-- Navigation - REMOVED GET STARTED BUTTON -->
+        <header class="landing-header glass-nav">
             <div class="brand">
+                <span class="brand-icon">✨</span>
                 <span class="brand-name">ABTalks</span>
             </div>
 
             <nav class="landing-nav">
-                <a href="#home">Home</a>
-                <a href="#challenge">Challenge</a>
-                <a href="#features">Features</a>
-                <a href="#about">About</a>
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#challenge" class="nav-link">Challenge</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#testimonials" class="nav-link">Community</a>
             </nav>
 
             <div class="header-actions">
-                <a href="login.html" class="btn btn-secondary">
+                <a href="login.html" class="btn btn-secondary btn-sm">
                     Sign In
                 </a>
-
+                <!-- REMOVED: Get Started button -->
             </div>
-
         </header>
 
+        <!-- Hero Section -->
+        <section class="hero-section-modern" id="home">
+            <div class="hero-grid">
+                <div class="hero-content-modern">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        🚀 60-Day Challenge Live
+                    </div>
+                    
+                    <h1 class="hero-title-modern">
+                        Build Your
+                        <span class="gradient-text">Developer</span>
+                        Identity
+                    </h1>
 
-        <!-- Main Hero -->
-        <section class="hero-section" id="home">
+                    <p class="hero-description-modern">
+                        Join 1,200+ students in a 60-day coding journey. 
+                        Build projects, earn streaks, and land your dream internship.
+                    </p>
 
-            <div class="hero-content">
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="1200">0</span>
+                            <span class="stat-label">Students</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="45">0</span>
+                            <span class="stat-label">Days Running</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="98">0</span>
+                            <span class="stat-label">% Completion</span>
+                        </div>
+                    </div>
 
-                <span class="eyebrow">
-                    60-DAY CODING CHALLENGE
-                </span>
+                    <div class="hero-actions-modern">
+                        <a href="login.html" class="btn btn-primary btn-large">
+                            Start Your Journey
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="#features" class="btn btn-ghost btn-large">
+                            <span class="play-icon">▶</span>
+                            See How It Works
+                        </a>
+                    </div>
 
-                <h1>
-                    Welcome to
-                    <span class="gradient-text">ABTalks</span>
-                </h1>
-
-                <p class="hero-title">
-                    Build. Learn. Show Up.
-                </p>
-
-             
-
-                <div class="hero-actions">
-
-                    <a href="login.html" class="btn btn-primary btn-large">
-                        Get Started
-                        <span>→</span>
-                    </a>
-
-                   
-
+                    <div class="trust-badges">
+                        <span>⭐ Trusted by students from</span>
+                        <div class="trust-logos">
+                            <span>IIT</span>
+                            <span>NIT</span>
+                            <span>VIT</span>
+                            <span>BITS</span>
+                            <span>+50</span>
+                        </div>
+                    </div>
                 </div>
 
+                <div class="hero-visual-modern">
+                    <div class="floating-cards">
+                        <div class="float-card card-1">
+                            <div class="card-icon">🔥</div>
+                            <div class="card-info">
+                                <strong>7-Day Streak</strong>
+                                <span>You're on fire!</span>
+                            </div>
+                            <div class="card-progress">
+                                <div class="progress-bar" style="width: 70%"></div>
+                            </div>
+                        </div>
+
+                        <div class="float-card card-2">
+                            <div class="card-icon">📊</div>
+                            <div class="card-info">
+                                <strong>Top 15%</strong>
+                                <span>Global Rank</span>
+                            </div>
+                            <div class="card-progress">
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="float-card card-3">
+                            <div class="card-icon">🏆</div>
+                            <div class="card-info">
+                                <strong>3 Achievements</strong>
+                                <span>Earned this week</span>
+                            </div>
+                        </div>
+
+                        <div class="float-card card-4">
+                            <div class="avatar-stack">
+                                <div class="avatar">AK</div>
+                                <div class="avatar">R</div>
+                                <div class="avatar">P</div>
+                                <div class="avatar more">+12</div>
+                            </div>
+                            <span class="live-text">👥 48 coding now</span>
+                        </div>
+                    </div>
+
+                    <!-- Glow Effects -->
+                    <div class="glow-orb orb-1"></div>
+                    <div class="glow-orb orb-2"></div>
+                    <div class="glow-orb orb-3"></div>
+                </div>
             </div>
         </section>
-
 
         <!-- Challenge Section -->
-        <section class="challenge-section" id="challenge">
-
-            <div class="section-heading">
-
-                <span class="eyebrow">
-                    THE CHALLENGE
-                </span>
-
-                <h2>
-                    60 Days.
-                    <span class="gradient-text">
-                        One Commitment.
-                    </span>
-                </h2>
-
-                <p>
-                    Code every day. Build every day.
-                    Show your progress every day.
-                </p>
-
+        <section class="challenge-section-modern" id="challenge">
+            <div class="section-header-center">
+                <span class="eyebrow gradient">THE JOURNEY</span>
+                <h2>Your Path to<span class="gradient-text"> Success</span></h2>
+                <p>Three simple steps to transform your coding journey</p>
             </div>
 
-
-            <div class="challenge-timeline">
-
-                <div class="timeline-item active">
-                    <span class="timeline-number">01</span>
-                    <span>Start</span>
+            <div class="journey-timeline">
+                <div class="journey-step">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">📝</div>
+                    <h3>Start Daily</h3>
+                    <p>Commit to 60 days of consistent coding</p>
+                    <div class="step-progress">
+                        <div class="step-dot active"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                    </div>
                 </div>
 
-                <div class="timeline-line"></div>
+                <div class="journey-line"></div>
 
-                <div class="timeline-item">
-                    <span class="timeline-number">30</span>
-                    <span>Consistency</span>
+                <div class="journey-step">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">📈</div>
+                    <h3>Build & Show</h3>
+                    <p>Create projects and share your progress</p>
+                    <div class="step-progress">
+                        <div class="step-dot"></div>
+                        <div class="step-dot active"></div>
+                        <div class="step-dot"></div>
+                    </div>
                 </div>
 
-                <div class="timeline-line"></div>
+                <div class="journey-line"></div>
 
-                <div class="timeline-item">
-                    <span class="timeline-number">60</span>
-                    <span>Complete</span>
+                <div class="journey-step">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">🏅</div>
+                    <h3>Earn Rewards</h3>
+                    <p>Unlock achievements and build your portfolio</p>
+                    <div class="step-progress">
+                        <div class="step-dot"></div>
+                        <div class="step-dot"></div>
+                        <div class="step-dot active"></div>
+                    </div>
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- Features -->
-        <section class="features-section" id="features">
-
-            <div class="section-heading">
-
-                <span class="eyebrow">
-                    WHY ABTALKS
-                </span>
-
-                <h2>
-                    Build proof,
-                    not just plans.
-                </h2>
-
+        <!-- Features Section -->
+        <section class="features-section-modern" id="features">
+            <div class="section-header-center">
+                <span class="eyebrow gradient">WHY ABTALKS</span>
+                <h2>Built for<span class="gradient-text"> Student Success</span></h2>
             </div>
 
-
-            <div class="feature-grid">
-
-                <article class="feature-card">
-
-                    <div class="feature-icon">
-                        &lt;/&gt;
+            <div class="feature-grid-modern">
+                <div class="feature-card-modern" data-delay="0">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon-glow" style="background: rgba(139,92,246,0.15);">
+                            <span class="feature-icon-emoji">💻</span>
+                        </div>
                     </div>
+                    <h3>Daily Coding</h3>
+                    <p>Build real projects every day with structured challenges that grow with you.</p>
+                    <div class="feature-tag">Popular</div>
+                </div>
 
-                    <h3>
-                        Code Consistently
-                    </h3>
-
-                    <p>
-                        Build something every day and turn
-                        consistency into a visible habit.
-                    </p>
-
-                </article>
-
-
-                <article class="feature-card">
-
-                    <div class="feature-icon">
-                        GH
+                <div class="feature-card-modern" data-delay="100">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon-glow" style="background: rgba(74,222,128,0.12);">
+                            <span class="feature-icon-emoji">📊</span>
+                        </div>
                     </div>
+                    <h3>Track Progress</h3>
+                    <p>Visualize your growth with streaks, stats, and achievement milestones.</p>
+                    <div class="feature-tag">New</div>
+                </div>
 
-                    <h3>
-                        Show Your Work
-                    </h3>
-
-                    <p>
-                        Connect your GitHub activity and
-                        create a public record of your progress.
-                    </p>
-
-                </article>
-
-
-                <article class="feature-card">
-
-                    <div class="feature-icon">
-                        in
+                <div class="feature-card-modern" data-delay="200">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon-glow" style="background: rgba(250,204,21,0.12);">
+                            <span class="feature-icon-emoji">🏆</span>
+                        </div>
                     </div>
+                    <h3>Earn Rewards</h3>
+                    <p>Unlock badges, certificates, and recognition for your hard work.</p>
+                </div>
 
-                    <h3>
-                        Build Your Presence
-                    </h3>
-
-                    <p>
-                        Share your learning journey through
-                        LinkedIn and become more visible.
-                    </p>
-
-                </article>
-
+                <div class="feature-card-modern" data-delay="300">
+                    <div class="feature-icon-wrap">
+                        <div class="feature-icon-glow" style="background: rgba(56,189,248,0.12);">
+                            <span class="feature-icon-emoji">🤝</span>
+                        </div>
+                    </div>
+                    <h3>Community</h3>
+                    <p>Connect with peers, share wins, and grow together in a supportive space.</p>
+                </div>
             </div>
-
         </section>
 
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" id="testimonials">
+            <div class="section-header-center">
+                <span class="eyebrow gradient">COMMUNITY VOICES</span>
+                <h2>What Students<span class="gradient-text"> Are Saying</span></h2>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">A</div>
+                        <div>
+                            <strong>Aditya Sharma</strong>
+                            <span>IIT Bombay • CSE</span>
+                        </div>
+                    </div>
+                    <p>"ABTalks helped me build a consistent coding habit. I've completed 45 days and already landed a summer internship!"</p>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #4ade80, #22c55e);">P</div>
+                        <div>
+                            <strong>Priya Patel</strong>
+                            <span>VIT • AI/ML</span>
+                        </div>
+                    </div>
+                    <p>"The daily challenges are perfectly paced. My GitHub is now full of projects that showcase my skills."</p>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #facc15, #f59e0b);">R</div>
+                        <div>
+                            <strong>Rahul Verma</strong>
+                            <span>NIT Trichy • IT</span>
+                        </div>
+                    </div>
+                    <p>"The community feedback and peer motivation kept me going. Completed all 60 days and feel ready for the industry."</p>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </section>
 
         <!-- Final CTA -->
-        <section class="final-cta" id="about">
-
-            <span class="eyebrow">
-                YOUR JOURNEY STARTS HERE
-            </span>
-
-            <h2>
-                Ready to build for
-                <span class="gradient-text">
-                    60 days?
-                </span>
-            </h2>
-
-            <p>
-                Start your ABTalks journey today.
-            </p>
-
-           
+        <section class="final-cta-modern">
+            <div class="cta-container">
+                <div class="cta-content">
+                    <span class="eyebrow gradient">✨ READY TO START?</span>
+                    <h2>Join 1,200+ Students<br>in the <span class="gradient-text">60-Day Challenge</span></h2>
+                    <p>No pressure. No perfection. Just consistent growth.</p>
+                    <div class="cta-buttons">
+                        <a href="login.html" class="btn btn-primary btn-large">
+                            Get Started Free
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="#features" class="btn btn-ghost btn-large">
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="cta-stats">
+                        <span>✅ 1,200+ students enrolled</span>
+                        <span>⭐ 4.9/5 average rating</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-
         <!-- Footer -->
-        <footer class="site-footer">
-
-            <span>
-                © 2026 ABTalks
-            </span>
-
-            <span>
-                Build. Learn. Show Up.
-            </span>
-
+        <footer class="site-footer-modern">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="brand-icon">✨</span>
+                    <span>ABTalks</span>
+                    <span class="footer-tagline">Build. Learn. Show Up.</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">About</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub">🐙</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 ABTalks. Made with ❤️ for students.</span>
+            </div>
         </footer>
 
     </main>
-    <script src="js/data.js"></script>
-<script src="js/app.js"></script>
- <script src="js/sidebar.js"></script>
 
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/landing.js"></script>
 
 </body>
 </html>

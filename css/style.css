@@ -2754,3 +2754,143 @@ button:disabled,
     }
 
 }
+
+/* =========================================================
+   LANDING PAGE SPACING FIXES
+   ========================================================= */
+
+/* Reduce header height */
+.landing-header {
+    min-height: 60px; /* was 76px */
+    padding: 8px 0;
+}
+
+/* Reduce hero section height */
+.hero-section {
+    min-height: 480px; /* was 720px */
+    padding: 30px 0 50px; /* was 70px 0 */
+    gap: 20px; /* was 50px */
+}
+
+/* Reduce hero content spacing */
+.hero-content h1 {
+    margin-bottom: 8px; /* was 14px */
+}
+
+.hero-title {
+    margin-bottom: 10px; /* was 18px */
+    font-size: 1.1rem; /* was 1.35rem */
+}
+
+.hero-actions {
+    margin-top: 18px; /* was 30px */
+    gap: 8px; /* was 10px */
+}
+
+/* Reduce section padding */
+.challenge-section,
+.features-section,
+.final-cta {
+    padding: 40px 0; /* was 80px 0 */
+}
+
+/* Reduce section heading spacing */
+.section-heading {
+    margin-bottom: 20px; /* was 35px */
+}
+
+.section-heading p {
+    margin-top: 6px; /* was 12px */
+}
+
+/* Reduce timeline spacing */
+.challenge-timeline {
+    margin-top: 20px; /* was 45px */
+}
+
+/* Reduce feature grid spacing */
+.feature-grid {
+    gap: 10px; /* was 14px */
+}
+
+.feature-card {
+    padding: 18px 20px; /* was 25px */
+}
+
+.feature-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px; /* was 20px */
+}
+
+/* Reduce final CTA spacing */
+.final-cta h2 {
+    margin-bottom: 8px; /* was 15px */
+}
+
+.final-cta p {
+    margin-bottom: 15px; /* was 25px */
+}
+
+/* Reduce footer spacing */
+.site-footer {
+    padding: 15px 0 20px; /* was 25px 0 35px */
+}
+
+/* =========================================================
+   RESPONSIVE FIXES FOR MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 350px;
+        padding: 20px 0 30px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .challenge-section,
+    .features-section,
+    .final-cta {
+        padding: 25px 0;
+    }
+    
+    .landing-header {
+        min-height: 50px;
+    }
+    
+    .section-heading {
+        margin-bottom: 15px;
+    }
+    
+    .feature-grid {
+        gap: 8px;
+    }
+    
+    .feature-card {
+        padding: 14px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 280px;
+        padding: 15px 0 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-title {
+        font-size: 0.95rem;
+    }
+    
+    .challenge-section,
+    .features-section,
+    .final-cta {
+        padding: 20px 0;
+    }
+}
