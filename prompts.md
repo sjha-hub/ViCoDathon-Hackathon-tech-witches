@@ -8,10 +8,10 @@ This document logs all prompts used across 4 AI tools (ChatGPT, Nano Banana, Cla
 
 | Tool | Purpose | Date Used |
 | :--- | :--- | :--- |
-| **ChatGPT** | Design brainstorming, prompt generation, file organization | [Insert Date] |
-| **Nano Banana** | UI/UX design execution (8-page Canva design system) | [Insert Date] |
-| **Claude** | Initial code generation (single HTML file) | [Insert Date] |
-| **DeepSeek** | Code refactoring, feature additions, bug fixes, deployment guidance | [Insert Date] |
+| **ChatGPT** | Design brainstorming, prompt generation, file organization | 
+| **Nano Banana** | UI/UX design execution (8-page Canva design system) | 
+| **Claude** | Initial code generation (single HTML file) | 
+| **DeepSeek** | Code refactoring, feature additions, bug fixes, deployment guidance | 
 
 ---
 
@@ -181,9 +181,9 @@ The website must be:
 - Built using HTML, CSS and vanilla JavaScript
 - No unnecessary frameworks
 
-==================================================
+
 1. PRODUCT CONTEXT
-==================================================
+
 
 ABTalks runs a 60-day coding challenge for Indian college students.
 
@@ -212,9 +212,9 @@ The interface must work extremely well at:
 
 Desktop is secondary.
 
-==================================================
+
 2. DESIGN REFERENCES
-==================================================
+
 
 A reference PDF called:
 
@@ -258,9 +258,9 @@ The following design characteristics from the reference should remain consistent
 - Floating/compact navigation rail where appropriate
 - Developer/SaaS aesthetic
 
-==================================================
+
 3. CANVA DESIGN/CSS REFERENCE
-==================================================
+
 
 I will provide a separate Canva PDF containing the exact CSS/design specifications.
 
@@ -292,9 +292,9 @@ If something is not specified in the Canva PDF, use Dashboardfff.pdf as the seco
 
 Only invent design details when neither reference specifies them.
 
-==================================================
+
 4. CORE USER FLOW
-==================================================
+
 
 The complete user journey must work like this:
 
@@ -328,9 +328,7 @@ Every page must have appropriate navigation/back behavior.
 
 Do not create dead buttons.
 
-==================================================
 5. IMPORTANT SCOPE RULE
-==================================================
 
 The original challenge says authentication, real accounts and production database are OUT OF SCOPE.
 
@@ -348,9 +346,7 @@ A simple JSON/data.js structure is sufficient.
 
 The website should FEEL realistic even though it does not use a real backend.
 
-==================================================
 6. LANDING PAGE
-==================================================
 
 Route:
 
@@ -386,9 +382,7 @@ Do not turn it into a generic marketing website.
 
 It should feel like the beginning of the actual ABTalks product.
 
-==================================================
 7. LOGIN PAGE
-==================================================
 
 Create the Sign In screen based on the reference PDF.
 
@@ -426,9 +420,7 @@ A mocked registration interaction is enough.
 
 The experience should feel smooth.
 
-==================================================
 8. MODULES PAGE
-==================================================
 
 After Sign In:
 
@@ -463,9 +455,7 @@ GitHub
 
 The page must visually match the provided reference.
 
-==================================================
 9. CODING PROFILE SETUP
-==================================================
 
 Create the coding profile setup experience shown in the reference.
 
@@ -511,9 +501,7 @@ CONTINUE → LINKEDIN
 
 action.
 
-==================================================
 10. LINKEDIN SETUP
-==================================================
 
 Create the LinkedIn setup page based on the reference PDF.
 
@@ -560,9 +548,7 @@ and:
 
 CONTINUE → GITHUB
 
-==================================================
 11. GITHUB SETUP
-==================================================
 
 Create the GitHub page based on the provided reference.
 
@@ -591,9 +577,7 @@ Provide:
 
 CONTINUE → DASHBOARD
 
-==================================================
 12. DASHBOARD
-==================================================
 
 Route:
 
@@ -615,9 +599,7 @@ The dashboard should include:
 
 Also include the thoughtful UX features mentioned below.
 
-==================================================
 13. DASHBOARD TOP NAVIGATION
-==================================================
 
 The dashboard must have a clear top/header area.
 
@@ -643,9 +625,7 @@ navigate to:
 
 This is the main transition from dashboard to the daily challenge.
 
-==================================================
 14. DASHBOARD DATA
-==================================================
 
 Use realistic mock data.
 
@@ -675,9 +655,7 @@ Do not blindly use these exact values if the reference design uses different val
 
 The important thing is that the interface feels realistic.
 
-==================================================
 15. EDGE CASES
-==================================================
 
 The dashboard must handle the required real-world states.
 
@@ -727,9 +705,7 @@ Show a success/completion state.
 
 The UI must remain coherent across these states.
 
-==================================================
 16. THOUGHTFUL UX IDEA
-==================================================
 
 Introduce at least ONE thoughtful feature that improves the student experience.
 
@@ -755,9 +731,7 @@ This gives students immediate clarity about what remains before they finish the 
 
 Keep this subtle and integrated into the existing design.
 
-==================================================
 17. CHALLENGE DAY
-==================================================
 
 Route:
 
@@ -791,9 +765,7 @@ Overall progress
 
 Activity/proof section
 
-==================================================
 18. CHALLENGE TASK
-==================================================
 
 The student must immediately understand:
 
@@ -819,9 +791,7 @@ Submission
 
 Do not make the student search around the screen for instructions.
 
-==================================================
 19. GITHUB PROOF
-==================================================
 
 Create a submission card:
 
@@ -847,9 +817,7 @@ Use mocked validation.
 
 Do not actually connect to GitHub.
 
-==================================================
 20. LINKEDIN PROOF
-==================================================
 
 Create a submission card:
 
@@ -873,9 +841,7 @@ Submitted ✓
 
 Again, use mocked functionality.
 
-==================================================
 21. FINAL SUBMISSION
-==================================================
 
 Once both proof items are provided:
 
@@ -899,9 +865,7 @@ Your proof of work has been recorded.
 
 Update the local mock state so that returning to the dashboard reflects completion.
 
-==================================================
 22. NAVIGATION RAIL
-==================================================
 
 The reference design contains a compact vertical navigation rail.
 
@@ -933,9 +897,7 @@ On mobile, ensure it does not interfere with content.
 
 If necessary, transform it into a compact bottom navigation or collapsible navigation.
 
-==================================================
 23. SMOOTH INTERACTIONS
-==================================================
 
 The website should NOT feel like separate static HTML pages.
 
@@ -969,9 +931,7 @@ for lightweight CSS transitions.
 
 Avoid heavy animations that hurt mobile performance.
 
-==================================================
 24. STATE MANAGEMENT
-==================================================
 
 Since there is no backend:
 
@@ -1005,9 +965,7 @@ github
 challenge
 submission
 
-==================================================
 25. FILE STRUCTURE
-==================================================
 
 Use this base structure:
 
@@ -1045,9 +1003,7 @@ github.html
 
 Do not force all pages into one HTML file if separate pages produce a cleaner and more reliable experience.
 
-==================================================
 26. ROUTES
-==================================================
 
 The evaluation requires these exact three routes:
 
@@ -1075,9 +1031,7 @@ If the project uses HTML files internally, configure Vercel routing appropriatel
 
 Do not expose broken URLs.
 
-==================================================
 27. VERCEL
-==================================================
 
 Create:
 
@@ -1087,9 +1041,7 @@ Configure routing so the required routes resolve correctly.
 
 Test the routes locally before considering the project complete.
 
-==================================================
 28. ACCESSIBILITY
-==================================================
 
 Use:
 
@@ -1103,9 +1055,7 @@ Use:
 
 Do not rely only on icons to communicate important actions.
 
-==================================================
 29. PERFORMANCE
-==================================================
 
 The website must load quickly on mobile.
 
@@ -1119,9 +1069,7 @@ Avoid:
 
 Use CSS efficiently.
 
-==================================================
 30. RESPONSIVE DESIGN
-==================================================
 
 Primary target:
 
@@ -1150,9 +1098,7 @@ At 390px:
 - Navigation must be usable
 - Content must have comfortable spacing
 
-==================================================
 31. IMPORTANT VISUAL RULE
-==================================================
 
 DO NOT redesign each page independently.
 
@@ -1191,9 +1137,7 @@ Create reusable CSS classes.
 
 Do not duplicate styling unnecessarily.
 
-==================================================
 32. REALISTIC MOCK DATA
-==================================================
 
 Create realistic JSON/mock data.
 
@@ -1216,9 +1160,7 @@ Keep the data easy to modify in:
 
 js/data.js
 
-==================================================
 33. ERROR HANDLING
-==================================================
 
 Handle:
 
@@ -1238,9 +1180,7 @@ Do not use browser alert() for normal UX unless absolutely necessary.
 
 Prefer inline error messages or toast notifications.
 
-==================================================
 34. FINAL TESTING
-==================================================
 
 Before finishing:
 
@@ -1280,9 +1220,7 @@ No missing assets.
 
 No horizontal overflow at 390px.
 
-==================================================
 35. FINAL EVALUATION PRIORITY
-==================================================
 
 Prioritize the following in this exact order:
 
@@ -1297,9 +1235,7 @@ Prioritize the following in this exact order:
 9. Interaction quality
 10. Desktop responsiveness
 
-==================================================
 36. DO NOT DO THESE THINGS
-==================================================
 
 DO NOT:
 
@@ -1321,9 +1257,7 @@ DO NOT:
 - Create placeholder pages that do nothing
 - Ignore the provided visual references
 
-==================================================
 37. FINAL QUALITY BAR
-==================================================
 
 The final website should feel like:
 
