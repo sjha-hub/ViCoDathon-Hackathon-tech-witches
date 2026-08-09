@@ -6,8 +6,8 @@ This document logs all prompts used across 4 AI tools (ChatGPT, Nano Banana, Cla
 
 ## AI Tools Used
 
-| Tool | Purpose | Date Used |
-| :--- | :--- | :--- |
+| Tool | Purpose |
+| :--- | :--- | 
 | **ChatGPT** | Design brainstorming, prompt generation, file organization | 
 | **Nano Banana** | UI/UX design execution (8-page Canva design system) | 
 | **Claude** | Initial code generation (single HTML file) | 
